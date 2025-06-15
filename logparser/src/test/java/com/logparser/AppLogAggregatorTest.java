@@ -9,7 +9,7 @@ import com.logparser.processor.ApplicationLogProcessor;
 
 class AppLogAggregatorTest {
     @Test
-    void process_singleErrorLog_updatesCountCorrectly() {
+   public void process_singleErrorLog_updatesCountCorrectly() {
         LogAggregator logAggregator = new LogAggregator();
         ApplicationLogProcessor processor = new ApplicationLogProcessor();
         String logInput = "level=ERROR";
@@ -21,7 +21,7 @@ class AppLogAggregatorTest {
     }
 
     @Test
-    void process_multipleLogs_accumulatesEachLevel() {
+   public void process_multipleLogs_accumulatesEachLevel() {
         LogAggregator logAggregator = new LogAggregator();
         ApplicationLogProcessor processor = new ApplicationLogProcessor();
 
@@ -35,7 +35,7 @@ class AppLogAggregatorTest {
     }
 
     @Test
-    void process_nullInput_doesNotCrash() {
+  public  void process_nullInput_doesNotCrash() {
         LogAggregator logAggregator = new LogAggregator();
         ApplicationLogProcessor processor = new ApplicationLogProcessor();
 
@@ -46,7 +46,7 @@ class AppLogAggregatorTest {
     }
 
     @Test
-    void process_invalidFormat_ignoresLine() {
+  public  void process_invalidFormat_ignoresLine() {
         LogAggregator logAggregator = new LogAggregator();
         ApplicationLogProcessor processor = new ApplicationLogProcessor();
 
