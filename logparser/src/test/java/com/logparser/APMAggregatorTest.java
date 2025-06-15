@@ -18,13 +18,13 @@ public class APMAggregatorTest {
     private APMLogProcessor apmProcessor;
 
     @BeforeEach
-    void init() {
+    public void init() {
         logAggregator = new LogAggregator();
         apmProcessor = new APMLogProcessor();
     }
 
     @Test
-    void shouldHandleValidSingleAPMEntry() {
+    public void shouldHandleValidSingleAPMEntry() {
         String logEntry = "metric=cpu_usage_percent value=75.5";
         apmProcessor.process(logEntry, logAggregator);
 
@@ -34,7 +34,7 @@ public class APMAggregatorTest {
     }
 
     @Test
-    void shouldAggregateMultipleApmMetricsCorrectly() {
+   public void shouldAggregateMultipleApmMetricsCorrectly() {
         apmProcessor.process("metric=cpu_usage_percent value=75.5", logAggregator);
         apmProcessor.process("metric=cpu_usage_percent value=85.0", logAggregator);
         apmProcessor.process("metric=memory_usage_percent value=60.0", logAggregator);
@@ -50,7 +50,7 @@ public class APMAggregatorTest {
     }
 
     @Test
-    void shouldIgnoreMalformedApmLine() {
+   public void shouldIgnoreMalformedApmLine() {
         String malformedInput = "invalid_format";
         apmProcessor.process(malformedInput, logAggregator);
 
@@ -58,14 +58,14 @@ public class APMAggregatorTest {
     }
 
     @Test
-    void shouldIgnoreNullApmLine() {
+    public void shouldIgnoreNullApmLine() {
         apmProcessor.process(null, logAggregator);
 
         assertTrue(logAggregator.summarizeApm().isEmpty());
     }
 
     @Test
-    void shouldCaptureExtremesForMetricValues() {
+   public void shouldCaptureExtremesForMetricValues() {
         apmProcessor.process("metric=cpu_usage_percent value=0.0", logAggregator);
         apmProcessor.process("metric=cpu_usage_percent value=100.0", logAggregator);
 
