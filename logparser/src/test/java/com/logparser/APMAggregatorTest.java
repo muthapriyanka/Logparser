@@ -17,7 +17,7 @@ public class APMAggregatorTest {
     private LogAggregator logAggregator;
     private APMLogProcessor apmProcessor;
 
-    @BeforeEach
+    @Before
     public void init() {
         logAggregator = new LogAggregator();
         apmProcessor = new APMLogProcessor();
