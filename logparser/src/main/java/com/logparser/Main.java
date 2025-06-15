@@ -11,6 +11,8 @@ import com.logparser.processor.LogProcessorFactory;
 public class Main {
 
 public static void main(String[] args) {
+ System.out.println(">>> [CI/CD DEBUG] Logparser main started...");
+    
     if (args.length < 2 || !args[0].equals("--file")) {
         System.out.println("Usage: --file <filename>");
         return;
