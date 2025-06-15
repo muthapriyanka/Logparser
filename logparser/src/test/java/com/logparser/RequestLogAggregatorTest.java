@@ -12,7 +12,7 @@ import com.logparser.processor.RequestLogProcessor;
 class RequestLogAggregatorTest {
    
     @Test
-    void shouldTrackSingleRequestLogCorrectly() {
+   public void shouldTrackSingleRequestLogCorrectly() {
         LogAggregator logAggregator = new LogAggregator();
         RequestLogProcessor logHandler = new RequestLogProcessor();
 
@@ -27,7 +27,7 @@ class RequestLogAggregatorTest {
     }
 
     @Test
-    void shouldSummarizeMultipleRequestLogs() {
+   public void shouldSummarizeMultipleRequestLogs() {
         LogAggregator logAggregator = new LogAggregator();
         RequestLogProcessor logHandler = new RequestLogProcessor();
 
@@ -43,7 +43,7 @@ class RequestLogAggregatorTest {
     }
 
     @Test
-    void shouldIgnoreMalformedRequestLog() {
+   public void shouldIgnoreMalformedRequestLog() {
         LogAggregator logAggregator = new LogAggregator();
         RequestLogProcessor logHandler = new RequestLogProcessor();
 
@@ -53,7 +53,7 @@ class RequestLogAggregatorTest {
     }
 
     @Test
-    void shouldSkipRequestLogWithMissingFields() {
+  public void shouldSkipRequestLogWithMissingFields() {
         LogAggregator logAggregator = new LogAggregator();
         RequestLogProcessor logHandler = new RequestLogProcessor();
 
