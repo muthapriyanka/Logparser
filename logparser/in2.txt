@@ -1,0 +1,44 @@
+timestamp=2024-03-01T10:05:00Z metric=cpu_usage_percent host=appserver3 value=60
+timestamp=2024-03-01T10:05:05Z level=INFO message="Backup process initiated" host=appserver3
+timestamp=2024-03-01T10:05:10Z request_method=PUT request_url="/$8@#%*" response_status=204 response_time_ms=31 host=appserver3
+timestamp=2024-03-01T10:05:15Z metric=memory_usage_percent host=appserver3 value=70
+timestamp=2024-03-01T10:05:15Z request_method=PUT request_url="/$8@#%*" response_status=200 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:05:15Z metric=memory_usage_percent host=appserver3 value=100
+timestamp=2024-03-01T10:05:20Z level=ERROR message="File not found" error_code=404 host=appserver3
+timestamp=2024-03-01T10:05:15Z request_method=PUT request_url="/$8@#%*" response_status=200 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:05:25Z request_method=PUT request_url="/$8@#%*" response_status=200 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:05:25Z response_status=200 response_time_ms=120 host=appserver4
+timestamp=2024-03-01T10:05:30Z metric=disk_usage_percent mountpoint=/ host=appserver3 value=75
+timestamp=2024-03-01T10:05:30Z request_method=PUT request_url="/$8@#%*" response_status=200 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:05:35Z level=DEBUG message="Backup retry initiated" attempt=1 host=appserver3
+timestamp=2024-03-01T10:05:35Z request_method=POST request_url="/api/rebackup" response_status=200 response_time_ms=400 host=appserver3
+timestamp=2024-03-01T10:05:35Z level=DEBUG message="Backup retry initiated" attempt=2 host=appserver3
+timestamp=2024-03-01T10:05:40Z request_method=POST request_url="/api/rebackup" response_status=200 response_time_ms=400 host=appserver3
+timestamp=2024-03-01T10:05:45Z request_method=PUT request_url="/$8@#%*" response_status=200 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:05:45Z metric=network_bytes_in host=appserver3 interface=eth1 value=123321
+timestamp=2024-03-01T10:05:50Z level=INFO message="Backup completed successfully" host=appserver3
+timestamp=2024-03-01T10:05:55Z request_method=GET request_url="/config" response_status=403 response_time_ms=10 host=appserver3
+timestamp=2024-03-01T10:05:55Z request_method=PUT request_url="/$8@#%*" response_status=401 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:06:00Z metric=network_bytes_out host=appserver3 interface=eth1 value=654321
+timestamp=2024-03-01T10:06:05Z level=INFO message="System update scheduled" host=appserver4
+timestamp=2024-03-01T10:06:00Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=90 host=appserver3
+timestamp=2024-03-01T10:06:00Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=101 host=appserver3
+timestamp=2024-03-01T10:06:00Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=108 host=appserver3
+timestamp=2024-03-01T10:06:00Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=100 host=appserver3
+timestamp=2024-03-01T10:06:00Z request_method=GET request_url="/api/backup/status"
+timestamp=2024-03-01T10:06:00Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=350 host=appserver3
+timestamp=2024-03-01T10:06:05Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=50 host=appserver3
+timestamp=2024-03-01T10:06:05Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=260 host=appserver3
+timestamp=2024-03-01T10:06:05Z level=WARNING message="Low disk space detected" host=appserver3
+timestamp=2024-03-01T10:06:10Z request_method=GET request_url="/api/backup/status" response_status=200 response_time_ms=100 host=appserver3
+timestamp=2024-03-01T10:06:15Z metric=cpu_usage_percent host=appserver4 value=55
+timestamp=2024-03-01T10:06:15Z metric=cpu_usage_percent host=appserver4 value=56
+timestamp=2024-03-01T10:06:20Z level=ERROR message="Permission denied" host=appserver4
+timestamp=2024-03-01T10:06:25Z request_method=POST request_url="/api/update" response_status=403 response_time_ms=220 host=appserver4
+timestamp=2024-03-01T10:06:30Z request_method=PUT request_url="/api/save" response_status=201 response_time_ms=300 host=appserver3
+timestamp=2024-03-01T10:06:30Z metric=memory_usage_percent host=appserver4 value=82
+timestamp=2024-03-01T10:06:35Z level=INFO message="System update scheduled" host=appserver4
+timestamp=2024-03-01T10:06:40Z request_method=GET request_url="/api/health" response_status=200 response_time_ms=120 host=appserver4
+timestamp=2024-03-01T10:06:40Z request_method=GET request_url="/api/backup/status"
+timestamp=2024-03-01T10:06:45Z metric=memory_usage_percent host=appserver3 value=99
+timestamp=2024-03-01T10:06:50Z invalid_log_type metric=memory_usage_percent

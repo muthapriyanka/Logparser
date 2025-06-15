@@ -1,0 +1,107 @@
+{
+    "/api/save": {
+        "response_times": {
+            "95_percentile": 300,
+            "50_percentile": 300,
+            "90_percentile": 300,
+            "99_percentile": 300,
+            "min": 300,
+            "max": 300
+        },
+        "status_codes": {
+            "4XX": 0,
+            "5XX": 0,
+            "2XX": 1
+        }
+    },
+    "/config": {
+        "response_times": {
+            "95_percentile": 10,
+            "50_percentile": 10,
+            "90_percentile": 10,
+            "99_percentile": 10,
+            "min": 10,
+            "max": 10
+        },
+        "status_codes": {
+            "4XX": 1,
+            "5XX": 0,
+            "2XX": 0
+        }
+    },
+    "/api/health": {
+        "response_times": {
+            "95_percentile": 120,
+            "50_percentile": 120,
+            "90_percentile": 120,
+            "99_percentile": 120,
+            "min": 120,
+            "max": 120
+        },
+        "status_codes": {
+            "4XX": 0,
+            "5XX": 0,
+            "2XX": 1
+        }
+    },
+    "/api/update": {
+        "response_times": {
+            "95_percentile": 220,
+            "50_percentile": 220,
+            "90_percentile": 220,
+            "99_percentile": 220,
+            "min": 220,
+            "max": 220
+        },
+        "status_codes": {
+            "4XX": 1,
+            "5XX": 0,
+            "2XX": 0
+        }
+    },
+    "/$8@#%*": {
+        "response_times": {
+            "95_percentile": 300,
+            "50_percentile": 300,
+            "90_percentile": 300,
+            "99_percentile": 300,
+            "min": 31,
+            "max": 300
+        },
+        "status_codes": {
+            "4XX": 1,
+            "5XX": 0,
+            "2XX": 6
+        }
+    },
+    "/api/backup/status": {
+        "response_times": {
+            "95_percentile": 318.5,
+            "50_percentile": 100.5,
+            "90_percentile": 287,
+            "99_percentile": 343.7,
+            "min": 50,
+            "max": 350
+        },
+        "status_codes": {
+            "4XX": 0,
+            "5XX": 0,
+            "2XX": 8
+        }
+    },
+    "/api/rebackup": {
+        "response_times": {
+            "95_percentile": 400,
+            "50_percentile": 400,
+            "90_percentile": 400,
+            "99_percentile": 400,
+            "min": 400,
+            "max": 400
+        },
+        "status_codes": {
+            "4XX": 0,
+            "5XX": 0,
+            "2XX": 2
+        }
+    }
+}
