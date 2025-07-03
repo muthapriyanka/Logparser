@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: logparser-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: logparser
+        image: pmutha27/logparser:1.0       
+        args: ["/logs/input.txt"]           
+        volumeMounts:
+        - name: log-volume
+          mountPath: /logs
+      restartPolicy: Never
+      volumes:
+      - name: log-volume
+        hostPath:
+          path: /Users/priyankamutha/Downloads/Logparser-main/logparser 
+          type: Directory
