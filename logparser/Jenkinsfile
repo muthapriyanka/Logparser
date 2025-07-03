@@ -28,5 +28,17 @@ pipeline {
                 }
             }
         }
+        stage('Verify Tools') {
+            steps {
+                sh '''
+                    echo "Checking Docker..."
+                    which docker && docker --version || echo "Docker not available"
+        
+                    echo "Checking kubectl..."
+                    which kubectl && kubectl version --client || echo "kubectl not available"
+                '''
+            }
+        }
+
     }
 }
