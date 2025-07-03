@@ -7,13 +7,12 @@ pipeline {
         maven 'Maven 3.8.5'
     }
 
-    stages {
-        stage('Clone') {
+    stage('Checkout') {
             steps {
-                git 'https://github.com/muthapriyanka/Logparser.git'
+                checkout scm
             }
         }
-
+    
         stage('Build JAR') {
             steps {
                 dir('logparser') {
