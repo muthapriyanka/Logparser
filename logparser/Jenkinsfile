@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK 11'           // Match the name from Jenkins tool config
-        maven 'Maven 3.8.5'    // Match the name from Jenkins tool config
+        jdk 'JDK 11'
+        maven 'Maven 3.8.5'
     }
 
     stages {
@@ -13,21 +13,22 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build JAR') {
             steps {
                 dir('logparser') {
-                    sh 'mvn clean compile'
+                    sh 'mvn clean package'
                 }
             }
         }
 
-        stage('Run') {
+        stage('Run Locally') {
             steps {
                 dir('logparser') {
-                    sh 'mvn exec:java -Dexec.mainClass="com.logparser.Main"'
+                    sh 'mvn exec:java -Dexec.mainClass="com.logparser.Main" -Dexec.args="--file sample.log"'
                 }
             }
         }
+
         stage('Docker Build & Push') {
             steps {
                 dir('logparser') {
@@ -47,6 +48,65 @@ pipeline {
             }
         }
 
-
+        stage('Archive Output (Optional)') {
+            steps {
+                archiveArtifacts artifacts: 'logparser/*.json', fingerprint: true
+            }
+        }
     }
 }
+
+
+
+// pipeline {
+//     agent any
+
+//     tools {
+//         jdk 'JDK 11'           // Match the name from Jenkins tool config
+//         maven 'Maven 3.8.5'    // Match the name from Jenkins tool config
+//     }
+
+//     stages {
+//         stage('Clone') {
+//             steps {
+//                 git 'https://github.com/muthapriyanka/Logparser.git'
+//             }
+//         }
+
+//         stage('Build') {
+//             steps {
+//                 dir('logparser') {
+//                     sh 'mvn clean compile'
+//                 }
+//             }
+//         }
+
+//         stage('Run') {
+//             steps {
+//                 dir('logparser') {
+//                     sh 'mvn exec:java -Dexec.mainClass="com.logparser.Main"'
+//                 }
+//             }
+//         }
+//         stage('Docker Build & Push') {
+//             steps {
+//                 dir('logparser') {
+//                     sh '''
+//                         docker build -t pmutha27/logparser:1.5 .
+//                         docker push pmutha27/logparser:1.5
+//                     '''
+//                 }
+//             }
+//         }
+
+//         stage('Kubernetes Deploy') {
+//             steps {
+//                 dir('logparser') {
+//                     sh 'kubectl apply -f logparser-job.yaml'
+//                 }
+//             }
+//         }
+
+
+//     }
+// }
