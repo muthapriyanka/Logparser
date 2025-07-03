@@ -28,17 +28,25 @@ pipeline {
                 }
             }
         }
-        stage('Verify Tools') {
+        stage('Docker Build & Push') {
             steps {
-                sh '''
-                    echo "Checking Docker..."
-                    which docker && docker --version || echo "Docker not available"
-        
-                    echo "Checking kubectl..."
-                    which kubectl && kubectl version --client || echo "kubectl not available"
-                '''
+                dir('logparser') {
+                    sh '''
+                        docker build -t pmutha27/logparser:1.5 .
+                        docker push pmutha27/logparser:1.5
+                    '''
+                }
             }
         }
+
+        stage('Kubernetes Deploy') {
+            steps {
+                dir('logparser') {
+                    sh 'kubectl apply -f logparser-job.yaml'
+                }
+            }
+        }
+
 
     }
 }
